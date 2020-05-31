@@ -218,7 +218,7 @@ export class TCPClient {
 	};
 	subscribeToStream(streamName: string, onEventAppeared?: MappedEventAppearedCallback<EventStoreSubscription>, onDropped?: SubscriptionDroppedCallback<EventStoreSubscription>, resolveLinkTos?: boolean): Promise<EventStoreSubscription>;
 	subscribeToStreamFrom(streamName: string, fromEventNumber?: number, onEventAppeared?: MappedEventAppearedCallback<EventStoreCatchUpSubscription>, onLiveProcessingStarted?: LiveProcessingStartedCallback, onDropped?: SubscriptionDroppedCallback<EventStoreCatchUpSubscription>, settings?: SubscribeToStreamFromSettings): Promise<EventStoreCatchUpSubscription>;
-	connectToPersistentSubscription(streamName: string, groupName?: string, onEventAppeared?: MappedEventAppearedCallback<EventStorePersistentSubscription>, onDropped?: SubscriptionDroppedCallback<EventStorePersistentSubscription>, bufferSize?: number, autoAck?: number);
+	connectToPersistentSubscription(streamName: string, groupName?: string, onEventAppeared?: MappedEventAppearedCallback<EventStorePersistentSubscription>, onDropped?: SubscriptionDroppedCallback<EventStorePersistentSubscription>, bufferSize?: number, autoAck?: boolean);
 	close(): Promise<void>;
 	getPool(): Promise<TCPPool<object>>;
 	closeAllPools(): Promise<void>;
